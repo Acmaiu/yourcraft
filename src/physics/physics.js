@@ -18,25 +18,20 @@ export class Physics {
       player.velocity.y = Math.max(player.velocity.y, -3.5);
     }
 
-    // 1. Move X with Step-Up support
     let dx = player.velocity.x * delta;
     player.position.x += dx;
     if (this.checkCollision(player)) {
-      // Try step-up by 1 block height
       player.position.y += CONFIG.STEP_HEIGHT;
       if (this.checkCollision(player)) {
-        // Step failed, undo
         player.position.y -= CONFIG.STEP_HEIGHT;
         player.position.x -= dx;
         player.velocity.x = 0;
       }
     }
 
-    // 2. Move Z with Step-Up support
     let dz = player.velocity.z * delta;
     player.position.z += dz;
     if (this.checkCollision(player)) {
-      // Try step-up by 1 block height
       player.position.y += CONFIG.STEP_HEIGHT;
       if (this.checkCollision(player)) {
         player.position.y -= CONFIG.STEP_HEIGHT;
@@ -45,7 +40,6 @@ export class Physics {
       }
     }
 
-    // 3. Move Y (Vertical)
     let dy = player.velocity.y * delta;
     player.position.y += dy;
     player.onGround = false;

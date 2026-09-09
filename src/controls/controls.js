@@ -29,7 +29,6 @@ export class InputController {
     window.addEventListener('keydown', (e) => {
       this.keys[e.code] = true;
 
-      // Hotbar selection 1-9
       if (e.code.startsWith('Digit') && e.code.length === 6) {
         const digit = parseInt(e.code.charAt(5));
         if (digit >= 1 && digit <= 9 && this.onSelectHotbar) {
@@ -37,12 +36,10 @@ export class InputController {
         }
       }
 
-      // Creative Mode Toggle (Key C)
       if (e.code === 'KeyC' && !e.repeat) {
         if (this.onToggleCreative) this.onToggleCreative();
       }
 
-      // Double tap Space for Creative Flying
       if (e.code === 'Space' && !e.repeat) {
         const now = performance.now();
         if (now - this.lastSpacePress < 300) {

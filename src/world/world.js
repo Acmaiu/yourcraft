@@ -119,7 +119,6 @@ export class World {
       }
     }
 
-    // Sort closest chunks first
     chunksToGenerate.sort((a, b) => a.distSq - b.distSq);
 
     // Limit to max 2 chunk generations per frame to avoid lag spikes
@@ -132,7 +131,6 @@ export class World {
       this.scene.add(chunk.meshGroup);
     }
 
-    // Unload distant chunks
     for (const [key, chunk] of this.chunks.entries()) {
       if (!activeKeys.has(key)) {
         this.scene.remove(chunk.meshGroup);

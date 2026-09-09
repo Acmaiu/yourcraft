@@ -9,7 +9,6 @@ export const CONFIG = {
   DEVELOPER: "Wyzuk",
   GITHUB: "https://github.com/wyzuk",
 
-  // World dimensions
   CHUNK_SIZE: 16,
   CHUNK_HEIGHT: 64,
   WATER_LEVEL: 20,
@@ -26,19 +25,16 @@ export const CONFIG = {
   SNEAK_SPEED: 2.2,
   FLY_SPEED: 14.0,
 
-  // Acceleration & Friction
   ACCELERATION: 45.0,
   FRICTION: 12.0,
   AIR_CONTROL: 0.4,
   STEP_HEIGHT: 1.05, // Auto step up 1 block
 
-  // Player box
   PLAYER_WIDTH: 0.6,
   PLAYER_HEIGHT: 1.8,
   PLAYER_EYE_HEIGHT: 1.62,
   REACH_DISTANCE: 5.5,
 
-  // Day / Night cycle (5 minutes)
   DAY_DURATION_SECONDS: 300,
 };
 

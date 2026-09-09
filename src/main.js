@@ -49,11 +49,9 @@ class Game {
   initGame() {
     textureGenerator.generateAll();
 
-    // Guaranteed Surface Spawn
     const spawn = this.world.findSafeSpawn();
     this.player.spawn(spawn.x, spawn.y, spawn.z);
 
-    // Preload spawn area (9x9 chunks) before giving control
     this.world.preloadSpawnArea(this.player.position);
 
     requestAnimationFrame((t) => this.loop(t));
@@ -180,7 +178,6 @@ class Game {
         this.world.update(this.player.position);
         this.raycastTargetBlock();
 
-        // Handle continuous mining/placing while mouse button held
         if (this.controls.isLeftMouseDown) {
           this.mineTargetBlock();
         }
