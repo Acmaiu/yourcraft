@@ -50,9 +50,10 @@ class Game {
     textureGenerator.generateAll();
 
     const spawn = this.world.findSafeSpawn();
-    this.player.spawn(spawn.x, spawn.y, spawn.z);
-
+    this.player.spawn(spawn.x, spawn.y, spawn.z)
+    this.ui.updateHotbar
     this.world.preloadSpawnArea(this.player.position);
+  
 
     requestAnimationFrame((t) => this.loop(t));
   }
