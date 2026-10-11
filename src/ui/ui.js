@@ -134,8 +134,6 @@ export class UIController {
   }
 
   updateHUD(fps, pos, biome, isCreative, isFlying) {
-    this.updateHotbar();
-
     const healthContainer = document.getElementById('health-bar');
     if (healthContainer) {
       const hearts = Math.ceil(this.game.player.health / 2);
