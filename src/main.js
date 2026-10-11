@@ -38,8 +38,7 @@ class Game {
     this.raycaster = new THREE.Raycaster();
 this.raycastCenter = new THREE.Vector2(0, 0);
     
-    this.targetFaceNormal = null;
-
+    tss
     // Rate limiter for mining/placing while holding mouse buttons
     this.lastMineTime = 0;
     this.lastPlaceTime = 0;
