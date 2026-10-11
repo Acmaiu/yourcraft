@@ -53,7 +53,7 @@ this.raycastCenter = new THREE.Vector2(0, 0);
 
     const spawn = this.world.findSafeSpawn();
     this.player.spawn(spawn.x, spawn.y, spawn.z)
-    this.ui.updateHotbar
+    this.ui.updateHotbar();
     this.world.preloadSpawnArea(this.player.position);
   
 
@@ -204,8 +204,8 @@ this.raycastCenter = new THREE.Vector2(0, 0);
   }
 
   raycastTargetBlock() {
-    const raycaster = this.raycater;
-    raycaster.setFromCamera(new THREE.Vector2(0, 0), this.camera.threeCamera);
+    const raycaster = this.raycaster;
+    raycaster.setFromCamera(this.raycastCenter, this.camera.threeCamera);
     raycaster.far = CONFIG.REACH_DISTANCE;
 
     const origin = raycaster.ray.origin;
