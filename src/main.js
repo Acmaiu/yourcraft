@@ -204,7 +204,7 @@ this.raycastCenter = new THREE.Vector2(0, 0);
   }
 
   raycastTargetBlock() {
-    const raycaster = new THREE.Raycaster();
+    const raycaster = this.raycater;
     raycaster.setFromCamera(new THREE.Vector2(0, 0), this.camera.threeCamera);
     raycaster.far = CONFIG.REACH_DISTANCE;
 
